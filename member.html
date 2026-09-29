@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPメンバー募集について | GDP2027</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- ハンバーガーボタン -->
+    <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- サイドバー -->
+    <aside class="sidebar " id="sidebar">
+
+        <!-- 閉じるボタン -->
+        <button class="menu-close" id="menuClose" aria-label="メニューを閉じる">
+            ×
+        </button>
+
+        <a href="index.html" class="logo">芸クロ!</a>
+        <div class="site-title">GDP2027</div>
+        <nav>
+            <a href="index.html">ホーム</a>
+            <a href="nyuko.html">入稿方法</a>
+            <a href="template.html">テンプレート</a>
+            <a href="guide.html">制作ガイド</a>
+            <a href="member.html">GDPメンバー募集について</a>
+        </nav>
+    </aside>
+
+    <main class="main page-member">
+
+        <section class="hero">
+            <img src="images/header.png" class="hero-image" alt="">
+
+            <div class="hero-text">
+                <h1>GDPメンバー<br>募集について</h1>
+            </div>
+            <div class="hero-bg-decoration"></div>
+        </section>
+
+        <div class="content-inner">
+
+            <h2 class="section-title title-center" style="justify-content: center;">GDP（グッズデザインプロジェクト）とは</h2>
+            <p>大阪芸術大学オープンキャンパスで配布するグッズのデザインとプロデュースを行っている団体です。</p>
+            <p>どのような “もの” にデザインするのか、どのような方法でデザインを募集していくかなどを、みんなで話し合い、作成したものをオープンキャンパスに参加してくれたみなさんにお届けします。</p>
+
+            <hr class="section-line-2">
+
+            <h2 class="section-title title-center" style="justify-content: center;">活動内容</h2>
+
+            <p>オープンキャンパス受付ポスターデザイン、空間デザイン装飾、DMデザイン、Webデザイン、ブースデザイン、記録写真、配布活動、芸クロデザイン審査（募集告知）、その他</p>
+
+            <hr class="section-line-2">
+
+            <h2 class="section-title title-center" style="justify-content: center;">メンバー募集について</h2>
+
+            <p>GDPではプロジェクト参加希望者を募集しております。</p>
+
+            <p>参加希望者の方はGDPメールアドレス<br>【gdp2027@osaka-geidai.ac.jp 】までご連絡ください。</p>
+
+            <p>活動内容やオープンキャンパス実施日についてなどのご質問もお気軽にご連絡ください</p>
+
+            <hr class="section-line-2">
+
+            <h2 class="section-title title-center" style="justify-content: center;">以下コピペ用テンプレート</h2>
+            
+            <div class="code-box">【件名】
+学籍番号 氏名 GDPメンバー募集
+
+【本文】
+学籍番号：
+氏名：
+メールアドレス：
+電話番号：
+内容：
+</div>
+
+
+            <footer>
+                GDP2027 芸クロデザイン募集
+            </footer>
+        </div>
+    </main>
+
+</body>
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+const menuClose = document.getElementById("menuClose");
+const sidebar = document.getElementById("sidebar");
+const main = document.querySelector(".main");
+
+// ページを開いたときはサイドバーを閉じる
+sidebar.classList.add("closed");
+main.classList.add("full-width");
+main.classList.remove("menu-open");
+menuToggle.style.display = "flex";
+
+
+// メニューを開く
+menuToggle.addEventListener("click", function () {
+    sidebar.classList.remove("closed");
+    main.classList.remove("full-width");
+    main.classList.add("menu-open");
+    menuToggle.style.display = "none";
+});
+
+
+// ×ボタンで閉じる
+menuClose.addEventListener("click", function () {
+    sidebar.classList.add("closed");
+    main.classList.add("full-width");
+    main.classList.remove("menu-open");
+    menuToggle.style.display = "flex";
+});
+// サイドバー内のリンクをクリックしたとき
+    const sidebarLinks = sidebar.querySelectorAll("a");
+
+    sidebarLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            sessionStorage.setItem("closeSidebar", "true");
+        });
+    });
+
+
+</script>
+
+</html>

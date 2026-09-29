@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入稿方法 | GDP2027</title>
+    <link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- ハンバーガーボタン -->
+    <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- サイドバー -->
+    <aside class="sidebar " id="sidebar">
+
+        <!-- 閉じるボタン -->
+        <button class="menu-close" id="menuClose" aria-label="メニューを閉じる">
+            ×
+        </button>
+
+        <a href="index.html" class="logo">芸クロ!</a>
+        <div class="site-title">GDP2027</div>
+        <nav>
+            <a href="index.html">ホーム</a>
+            <a href="nyuko.html">入稿方法</a>
+            <a href="template.html">テンプレート</a>
+            <a href="guide.html">制作ガイド</a>
+            <a href="member.html">GDPメンバー募集について</a>
+        </nav>
+    </aside>
+
+    <main class="main page-nyuko">
+        
+        
+        <section class="hero">
+    <img src="images/header.png" class="hero-image" alt="">
+
+            <div class="hero-text">
+                <h1>入稿方法</h1>
+            </div>
+            <div class="hero-bg-decoration"></div>
+        </section>
+
+        <div class="content-inner">
+            <p><strong>●応募期間：2026年（令和8年）11月24日（火）午後23時59分までに入稿</strong></p>
+            <p class="red">※注意</p>
+            <p class="red">：入稿後にデータの修正はできません。コラボ規定に沿わない作品が提出された場合、選考の対象とならないのでご注意ください。</p>
+            <p class="red">：提出作品は応募者本人が制作したものに限ります。生成AIが出力したものを、そのまま、または加工して作品の全部もしくは一部に使用することはできません。</p>
+            <p><strong>●入稿先：</strong> <a href="mailto:gdp2027@osaka-geidai.ac.jp">gdp2027@osaka-geidai.ac.jp</a></p>
+            <p>データが大きい場合は、ファイル転送サービス（ギガファイル便など）をご利用ください。</p>
+
+            <hr class="section-line">
+
+            <h2 class="section-title title-center" style="justify-content: center;">内容と添付について</h2>
+            
+            <p><strong>件名に</strong>【学籍番号 氏名 作品タイトル】</p>
+            <p><strong>内容に</strong>【メールアドレス 電話番号 制作意図（50文字程度）】を記入してください。</p>
+            <p><strong>添付に</strong>【デザインデータ(Ai形式)とデータ使用ガイドラインに同意したデータ】を添付してください。</p>
+
+            <hr class="section-line">
+
+            <h2 class="section-title title-center" style="justify-content: center;">以下コピペ用テンプレート</h2>
+            
+            <div class="code-box">【件名】
+学籍番号 氏名 作品タイトル
+
+【本文】
+学籍番号：
+氏名：
+メールアドレス：
+電話番号：
+作品タイトル：
+制作意図：</div>
+
+            <p  class="text-center"　style="font-size: 12px;">※「学籍番号」「氏名」「作品タイトル」「制作意図」は、デザインが採用された際に公表されます。</p>
+
+            <footer>
+                GDP2027 芸クロデザイン募集
+            </footer>
+        </div>
+    </main>
+
+</body>
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+const menuClose = document.getElementById("menuClose");
+const sidebar = document.getElementById("sidebar");
+const main = document.querySelector(".main");
+
+// ページを開いたときはサイドバーを閉じる
+sidebar.classList.add("closed");
+main.classList.add("full-width");
+main.classList.remove("menu-open");
+menuToggle.style.display = "flex";
+
+
+// メニューを開く
+menuToggle.addEventListener("click", function () {
+    sidebar.classList.remove("closed");
+    main.classList.remove("full-width");
+    main.classList.add("menu-open");
+    menuToggle.style.display = "none";
+});
+
+
+// ×ボタンで閉じる
+menuClose.addEventListener("click", function () {
+    sidebar.classList.add("closed");
+    main.classList.add("full-width");
+    main.classList.remove("menu-open");
+    menuToggle.style.display = "flex";
+});
+
+// サイドバー内のリンクをクリックしたとき
+    const sidebarLinks = sidebar.querySelectorAll(" a");
+
+    sidebarLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            sessionStorage.setItem("closeSidebar", "true");
+        });
+    });
+
+
+</script>
+
+</html>
