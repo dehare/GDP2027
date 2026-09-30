@@ -625,6 +625,7 @@ footer {
     font-weight: 900;
     color: #222;
     margin-bottom: 25px;
+   white-space: nowrap;
 }
 
 .guideline-header p {
@@ -1118,8 +1119,10 @@ footer {
 }
 
 .guideline-header h2 {
-    font-size: 25px;
+    white-space: normal;
+        font-size: 28px;
 }
+
 
 .guideline-header p {
     font-size: 17px;
